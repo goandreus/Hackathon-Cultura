@@ -1,0 +1,114 @@
+.stylishBtn{
+    font-family: sans-serif;
+    background: none;
+    color: green;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #338033;
+    font-size: smaller;
+    font-weight: bold;
+    border-radius: 2px;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.stylishBtn:before{
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5;
+    filter: blur(30px);
+    transform: translateX(-130px) skewX(-15deg) ;
+}
+
+.stylishBtn:after{
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+}
+
+.stylishBtn:hover{
+    font-family: sans-serif;
+    color: #FFFFFF;
+    background: #338033;
+    cursor: pointer;
+}
+
+.stylishBtn:hover:before{
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+}
+
+.stylishBtn:hover:after{
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: .7s;
+}
+/*
+--------------------------------------------------------
+--
+--  Add Friend Button
+--
+--------------------------------------------------------
+ */
+.addFriendBtn{
+    font-family: sans-serif;
+    background: none;
+    color: #6cb2eb;
+    border: 1px solid #6cb2eb;
+    font-weight: bold;
+    border-radius: 2px;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.addFriendBtn:before{
+    display: block;
+    position: absolute;
+    background: #6cb2eb;
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5;
+}
+
+.addFriendBtn:after{
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+}
+
+.addFriendBtn:hover{
+    font-family: sans-serif;
+    color: #FFFFFF;
+    background: #6cb2eb;
+    cursor: pointer;
+}
+
+.addFriendBtn:hover:before{
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+}
+
+.addFriendBtn:hover:after{
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: .7s;
+}
