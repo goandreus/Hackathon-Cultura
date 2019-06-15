@@ -86,7 +86,7 @@ class ProfileController extends Controller
     {
         $data = Contacts::findOrFail($id);
         $data->delete();
-        $message = "Contact successfully deleted!";
+        $message = "Contacto Eliminado!";
         if ($data->delete()){
             return view('home')->with('success', $message);
         }

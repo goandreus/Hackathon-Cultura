@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'My Contacts')
+@section('title', 'HELP AD-HOC')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -19,13 +19,13 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-4">
-                            <h4 class="cHeader">Contacts</h4>
+                            <h4 class="cHeader">Solicitudes</h4>
                         </div>
                         <div class="col-md-6">
                             <form action="{{url('/search')}}" method="post" role="search" class="search">
                                 @csrf
                                 <div class="input-group">
-                                    <input type="search" class="form-control" name="search" placeholder="Search Contacts..." style="border-radius: 2px;">
+                                    <input type="search" class="form-control" name="search" placeholder="Buscar..." style="border-radius: 2px;">
                                     <span class="input-group-btn">
                                         <button type="submit" class="btn" style="border-radius: 0px;">
                                             <span class="fa fa-search"></span>
@@ -35,7 +35,7 @@
                             </form>
                         </div>
                         <div class="col-md-1">
-                            <a href="{{url('/add')}}" class="btn btn-success">Add</a>
+                            <a href="{{url('/add')}}" class="btn btn-success">Agregar</a>
                         </div>
                     </div>
                 </div>
@@ -50,20 +50,20 @@
                         @foreach($contacts as $contact)
                             <div class="row">
                                 <div class="col-md-7">
-                                    <a href="{{ url('/profile/') }}/{{$contact->id}}" target="_blank">
+                                    <a href="{{ url('/profile/') }}/{{$contact->id}}" target="_blank">Departamento:
                                         <b class="text-primary">{{ $contact->fName }} {{ $contact->lName }}</b>
                                     </a>
-                                    <p class="text-info"><i class="fa fa-phone"></i> {{ $contact->pNumber }}</p>
-                                    <p style="line-height: 5px"><i class="fa fa-envelope"></i> {{ $contact->email }}</p>
-                                    <p style="line-height: 5px"><i class="fa fa-envelope"></i> {{ $contact->email2 }}</p>
-                                    <p style="line-height: 5px"><i class="fa fa-envelope"></i> {{ $contact->email3 }}</p>
-                                    <p style="line-height: 5px"><i class="fa fa-envelope"></i> {{ $contact->gender }}</p>
-                                    <p style="line-height: 5px"><i class="fa fa-envelope"></i> {{ $contact->pNumber2 }}</p>
-                                    <p style="line-height: 5px"><i class="fa fa-envelope"></i> {{ $contact->pNumber3 }}</p>
-                                    <p style="line-height: 5px"><i class="fa fa-envelope"></i> {{ $contact->pNumber4 }}</p>
-                                    <p style="line-height: 5px"><i class="fa fa-envelope"></i> {{ $contact->job }}</p>
-                                    <p style="line-height: 5px"><i class="fa fa-envelope"></i> {{ $contact->city }}</p>
-                                    <p style="line-height: 5px"><i class="fa fa-envelope"></i> {{ $contact->about }}</p>
+                                    <p class="text-info">Provincia: {{ $contact->pNumber }}</p>
+                                    <p style="line-height: 5px">Municipalidad:  {{ $contact->email }}</p>
+                                    <p style="line-height: 5px">Correo:  {{ $contact->email2 }}</p>
+                                    <p style="line-height: 5px">Comision:  {{ $contact->email3 }}</p>
+                                    <p style="line-height: 5px">Area Responsable:  {{ $contact->gender }}</p>
+                                    <p style="line-height: 5px">N. de Expediente:  {{ $contact->pNumber2 }}</p>
+                                    <p style="line-height: 5px">Nombre del solicitante: {{ $contact->pNumber3 }}</p>
+                                    <p style="line-height: 5px">Tipo de Tramite: {{ $contact->pNumber4 }}</p>
+                                    <p style="line-height: 5px">Uso: {{ $contact->job }}</p>
+                                    <p style="line-height: 5px">Direccion: {{ $contact->city }}</p>
+                                    <p style="line-height: 5px">Revision: {{ $contact->about }}</p>
                                 </div>
                                 
                                 <div class="col-md-2">

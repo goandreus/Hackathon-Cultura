@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Add Contact')
+@section('title', 'Agregar')
 @section('content')
 
     <div class="container">
@@ -7,7 +7,7 @@
             <div class="col-md-8" style="margin-top: 40px;">
                 <div class="card">
                     <div class="card-header">
-                        <b style="font-family: sans-serif;">Add Contacts</b>
+                        <b style="font-family: sans-serif;">Formulario</b>
                     </div>
                     <div class="card-body">
                         <div class="row contacts">
@@ -16,36 +16,35 @@
                                     @csrf
                                     
                                     <div class="form-group row">
-                                        <label for="fName" class="col-4 col-form-label">First Name(<span class="text-danger">*</span>):</label>
+                                        <label for="fName" class="col-4 col-form-label">Departamento:</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control {{ $errors->has('fName') ? ' is-invalid' : '' }}" name="fName" placeholder="First Name" required>
-                                            @if ($errors->has('fName'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="fNameValid">{{ $errors->first('fName') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="text" class="form-control {{ $errors->has('fName') ? ' is-invalid' : '' }}" name="fName" placeholder="Departamento" required>
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="lName" class="col-4 col-form-label">Last Name(<span class="text-danger">*</span>):</label>
+                                        <label for="lName" class="col-4 col-form-label">Provincia(<span class="text-danger">*</span>):</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control {{ $errors->has('lName') ? ' is-invalid' : '' }}" name="lName" placeholder="Last Name" required>
-                                            @if ($errors->has('lName'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="lNameValid">{{ $errors->first('lName') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="text" class="form-control {{ $errors->has('lName') ? ' is-invalid' : '' }}" name="lName" placeholder="Provincia" required>
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="gender" class="col-4 col-form-label">Gender:</label>
+                                        <label for="gender" class="col-4 col-form-label">Municipalidad:</label>
                                         <div class="col-8">
                                             <div class="_5k_5">
                                                 <span class="_5k_4" datatype="selectors" id="u_0_19">
                                                     <span id="gender">
                                                         <select class="_5dba" aria-label="Gender" title="Gender" name="gender" style="padding: 5px;">
-                                                            <option value="Male">Male</option>
-                                                            <option value="Female">Female</option>
+                                                            <option value="Males">San juan de miraflores</option>
+                                                            <option value="Female">Lurin</option>
+                                                            <option value="Female">San Borja</option>
+                                                            <option value="Female">La Victoria</option>
+                                                            <option value="Female">San Miguel</option>
+                                                            <option value="Female">Los olivos</option>
+                                                            <option value="Female">Miraflores</option>
+                                                            <option value="Female">Surco</option>
+                                                            <option value="Female">San Martin</option>
                                                         </select>
                                                     </span>
                                                 </span>
@@ -53,118 +52,77 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="pNumber" class="col-4 col-form-label">Phone Number(<span class="text-danger">*</span>):</label>
+                                        <label for="pNumber" class="col-4 col-form-label">Correo(<span class="text-danger">*</span>):</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control pNumber {{ $errors->has('pNumber') ? ' is-invalid' : '' }}" name="pNumber" placeholder="Phone Number" required>
-                                            @if ($errors->has('pNumber'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="pNumberValid">{{ $errors->first('pNumber') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="text" class="form-control pNumber {{ $errors->has('pNumber') ? ' is-invalid' : '' }}" name="pNumber" placeholder="Correo" required>
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="pNumber2" class="col-4 col-form-label">Phone Number 2:</label>
+                                        <label for="pNumber2" class="col-4 col-form-label">Comision:</label>
                                         <div class="col-md-8">
-                                            <input type="tel" class="form-control pNumber {{ $errors->has('pNumber2') ? ' is-invalid' : '' }}" name="pNumber2" placeholder="Phone Number 2">
-                                            @if ($errors->has('pNumber2'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="pNumber2Valid">{{ $errors->first('pNumber2') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="tel" class="form-control pNumber {{ $errors->has('pNumber2') ? ' is-invalid' : '' }}" name="pNumber2" placeholder="Comision">
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="pNumber3" class="col-4 col-form-label">Phone Number 3:</label>
+                                        <label for="pNumber3" class="col-4 col-form-label">Area Responsable:</label>
                                         <div class="col-md-8">
-                                            <input type="tel" class="form-control pNumber {{ $errors->has('pNumber3') ? ' is-invalid' : '' }}" name="pNumber3" placeholder="Phone Number 3">
-                                            @if ($errors->has('pNumber3'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="pNumber3Valid">{{ $errors->first('pNumber3') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="tel" class="form-control pNumber {{ $errors->has('pNumber3') ? ' is-invalid' : '' }}" name="pNumber3" placeholder="Area Responsable">
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="pNumber4" class="col-4 col-form-label">Phone Number 4:</label>
+                                        <label for="pNumber4" class="col-4 col-form-label">Numero de Expediente:</label>
                                         <div class="col-md-8">
-                                            <input type="tel" class="form-control pNumber {{ $errors->has('pNumber4') ? ' is-invalid' : '' }}" name="pNumber4" placeholder="Phone Number 4">
-                                            @if ($errors->has('pNumber4'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="pNumber4Valid">{{ $errors->first('pNumber4') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="tel" class="form-control pNumber {{ $errors->has('pNumber4') ? ' is-invalid' : '' }}" name="pNumber4" placeholder="Numero de Expediente">
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="email" class="col-4 col-form-label">Email(<span class="text-danger">*</span>):</label>
+                                        <label for="email" class="col-4 col-form-label">Nombre del solicitante(<span class="text-danger">*</span>):</label>
                                         <div class="col-md-8">
-                                            <input type="email" class="form-control email {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="Email" required>
-                                            @if ($errors->has('email'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="emailValid">{{ $errors->first('email') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="email" class="form-control email {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="Nombre del solicitante" >
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="email2" class="col-4 col-form-label">Email 2:</label>
+                                        <label for="email2" class="col-4 col-form-label"> Tipo de tramite:</label>
                                         <div class="col-md-8">
-                                            <input type="email" class="form-control email {{ $errors->has('email2') ? ' is-invalid' : '' }}" name="email2" placeholder="Email 2">
-                                            @if ($errors->has('email2'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="email2Valid">{{ $errors->first('email2') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="email" class="form-control email {{ $errors->has('email2') ? ' is-invalid' : '' }}" name="email2" placeholder="Tipo de tramite">
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="email3" class="col-4 col-form-label">Email 3:</label>
+                                        <label for="email3" class="col-4 col-form-label">Uso:</label>
                                         <div class="col-md-8">
-                                            <input type="email" class="form-control email {{ $errors->has('email3') ? ' is-invalid' : '' }}" name="email3" placeholder="Email 3">
-                                            @if ($errors->has('email3'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="email2Valid">{{ $errors->first('email3') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="email" class="form-control email {{ $errors->has('email3') ? ' is-invalid' : '' }}" name="email3" placeholder="Uso">
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="job" class="col-4 col-form-label">Job(<span class="text-danger">*</span>):</label>
+                                        <label for="job" class="col-4 col-form-label">Direcion(<span class="text-danger">*</span>):</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control {{ $errors->has('job') ? ' is-invalid' : '' }}" name="job" placeholder="Job" required>
-                                            @if ($errors->has('job'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="jobValid">{{ $errors->first('job') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="text" class="form-control {{ $errors->has('job') ? ' is-invalid' : '' }}" name="job" placeholder="Direccion" required>
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="city" class="col-4 col-form-label">City(<span class="text-danger">*</span>):</label>
+                                        <label for="city" class="col-4 col-form-label">Revicion(<span class="text-danger">*</span>):</label>
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control {{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" placeholder="City or Country" required>
-                                            @if ($errors->has('city'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="cityValid">{{ $errors->first('city') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="text" class="form-control {{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" placeholder="Revicion" required>
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="about" class="col-4 col-form-label">About(<span class="text-danger">*</span>):</label>
+                                        <label for="about" class="col-4 col-form-label">Dictamen(<span class="text-danger">*</span>):</label>
                                         <div class="col-md-8">
-                                            <textarea class="form-control {{ $errors->has('about') ? ' is-invalid' : '' }}" name="about" placeholder="About Contact" required></textarea>
-                                            @if ($errors->has('about'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong id="aboutValid">{{ $errors->first('about') }}</strong>
-                                                </span>
-                                            @endif
+                                            <textarea class="form-control {{ $errors->has('about') ? ' is-invalid' : '' }}" name="about" placeholder="Dictamen" required></textarea>
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="offset-4 col-8">
-                                            <button name="submit" type="submit" class="stylishBtn" style="font-size: smaller; height: 30px">Add Contact</button>
+                                            <button name="submit" type="submit" class="stylishBtn" style="font-size: smaller; height: 30px">Enviar</button>
                                         </div>
                                     </div>
                                 </form>

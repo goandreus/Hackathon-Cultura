@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Simple Contact Store')
+@section('title', 'HELP AD-HOC')
 @section('content')
         <div class="flex-center position-ref full-height">
             <div class="content">

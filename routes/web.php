@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/add', 'ContactsController@index');
 
 Route::post('/add', 'ContactsController@store')->name('add');

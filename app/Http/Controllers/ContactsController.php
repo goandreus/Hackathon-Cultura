@@ -26,18 +26,18 @@ class ContactsController extends Controller
         return Validator::make($data, [
             'file' => 'string|max:255, mimes:png|jpg|gif|bmp|ico|mpeg|mp3|wav|mp4|avi|mkv|pdf|doc|docs|xlsx|ppt|zip|rar|txt|size:5000',
             'fName' => 'string|max:64|required',
-            'lName' => 'string|max:32|required',
-            'gender' => 'required|string',
-            'pNumber' => 'required',
-            'pNumber2' => 'integer',
-            'pNumber3' => 'integer',
-            'pNumber4' => 'integer',
-            'email' => 'string|min:12|max:64|required',
-            'email2' => 'string|min:12|max:64|required',
-            'email3' => 'string|min:12|max:64|required',
-            'job' => 'string|required',
-            'city' => 'string|required',
-            'about' => 'text'
+            'lName' => 'string|max:64|required',
+            'gender' => 'string|max:64|required',
+            'pNumber' => 'string|max:64|required',
+            'pNumber2' => 'string|max:64|required',
+            'pNumber3' => 'string|max:64|required',
+            'pNumber4' => 'string|max:64|required',
+            'email' => 'string|max:64|required',
+            'email2' => 'string|max:64|required',
+            'email3' => 'string|max:64|required',
+            'job' => 'string|max:64|required',
+            'city' => 'string|max:64|required',
+            'about' => 'string|max:64|required'
         ]);
     }
 
@@ -72,9 +72,9 @@ class ContactsController extends Controller
         $data['city']=$request->input('city');
         $data['about']=$request->input('about');
 
-        $message = 'There is some error...';
+        $message = 'Campo vacio...';
         if($request->user()->contacts()->save($data)){
-            $message = 'Contact has been successfully added!';
+            $message = 'Se agrego!';
         }
 
         return redirect('home')->with(['success' => $message]);
@@ -90,9 +90,9 @@ class ContactsController extends Controller
     {
         $contact = Contacts::where('id', $id)->first();
 
-        $message = 'There is some error...';
+        $message = 'Error...';
         if($contact->delete()){
-            $message = 'Contact has been successfully deleted!';
+            $message = 'Se Borro!';
         }
 
         return back()->with(['success' => $message]);
